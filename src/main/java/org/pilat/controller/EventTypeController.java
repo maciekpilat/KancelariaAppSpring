@@ -5,9 +5,14 @@
  */
 package org.pilat.controller;
 
+import org.pilat.model.EventType;
+import org.pilat.repository.EventTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -15,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class EventTypeController {
+    
+    @Autowired
+    private EventTypeRepository er;
 
     @RequestMapping("/addeventtype")
     public String addEventType() {
@@ -24,4 +32,20 @@ public class EventTypeController {
         return "addEventType";
     }
 
+    @PostMapping("/addeventtype")
+    public String eventTypeForm(Model modle,
+            @RequestParam("event_type_name") String event_type_name
+    ) {
+        EventType e = new EventType(event_type_name);
+
+        System.out.println("Zapisuję rodzaj wydarzenie: " + e.toString());
+
+        er.save(e);
+
+        System.out.println("Zapisałem rodzaj wydarzenie: " + e.toString());
+
+        return "addEventType";
+
+    }
+    
 }

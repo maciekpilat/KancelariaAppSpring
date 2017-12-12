@@ -5,9 +5,14 @@
  */
 package org.pilat.controller;
 
+import org.pilat.model.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.pilat.repository.EventRepository;
 
 /**
  *
@@ -17,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EventController {
 
     @Autowired
+    private EventRepository er;
 
     @RequestMapping("/addevent")
     public String addEvent() {
@@ -24,6 +30,22 @@ public class EventController {
         System.out.println("ODPALAM EventController!");
 
         return "addEvent";
+    }
+
+    @PostMapping("/addevent")
+    public String eventForm(Model modle,
+            @RequestParam("event_type") Long event_type
+    ) {
+        Event e = new Event(event_type);
+
+        System.out.println("Zapisuję wydarzenie: " + e.toString());
+
+        er.save(e);
+
+        System.out.println("Zapisałem wydarzenie: " + e.toString());
+
+        return "addCase";
+
     }
 
 }

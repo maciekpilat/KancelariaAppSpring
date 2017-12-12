@@ -27,8 +27,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(Long event_id, Long event_type) {
-        this.event_id = event_id;
+    public Event(Long event_type) {
         this.event_type = event_type;
     }
 

@@ -27,8 +27,7 @@ public class EventType {
     public EventType() {
     }
 
-    public EventType(Long event_type_id, String event_type_name) {
-        this.event_type_id = event_type_id;
+    public EventType(String event_type_name) {
         this.event_type_name = event_type_name;
     }
 

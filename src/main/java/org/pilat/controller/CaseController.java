@@ -5,10 +5,14 @@
  */
 package org.pilat.controller;
 
+import org.pilat.model.Case;
 import org.pilat.repository.CaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -24,6 +28,25 @@ public class CaseController {
     public String caseController() {
 
         return "addCase";
+    }
+
+    @PostMapping("/addcase")
+    public String caseForm(Model modle,
+            @RequestParam("caseTitle") String caseTitle,
+            @RequestParam("caseStartDate") String caseStartDate,
+            @RequestParam("dateEndDate") String dateEndDate,
+            @RequestParam("clientId") Long clientId
+    ) {
+        Case c = new Case(caseTitle, caseStartDate, dateEndDate, clientId);
+
+        System.out.println("Zapisuję sprawę: " + c.toString());
+        
+        cr.save(c);
+        
+        System.out.println("Zapisałem sprawę: " + c.toString());
+        
+        return "addCase";
+
     }
 
 }
