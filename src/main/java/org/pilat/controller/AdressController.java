@@ -7,6 +7,7 @@ package org.pilat.controller;
 
 import org.pilat.model.Adress;
 import org.pilat.repository.AdressRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AdressController {
 
+    @Autowired //moze byc do usuniecia
     private AdressRepository ar;
 
     @RequestMapping("/addadress")
@@ -27,11 +29,6 @@ public class AdressController {
 
         System.out.println("ODPALAM AdressController!");
 
-//        //System.out.println(ar.findOne(1L)+ "crud find one");
-//        
-//        Adress ad = new Adress(1L, 1L, 1L, 1L, "Zielona", 1L, 1L);
-//        ar.save(ad);
-//        System.out.println("Zapisałem!");
         return "addAdress";
     }
 
@@ -45,23 +42,15 @@ public class AdressController {
             @RequestParam("street_number") Long street_number,
             @RequestParam("street_flat_number") Long street_flat_number
     ) {
-       
-        Adress a = new Adress(2L,country, voivodeship, city, street_name, street_number, street_flat_number);
-        System.out.println(a.toString());
-        
-//        Long firstname1 = firstname;
-//        Long lastname1 = lastname;
-//        Long country1 = country;
-//        Long voivodeship1 = voivodeship;
-//        Long city1 = city;
-//        String street_name1 = street_name;
-//        Long street_number1 = street_number;
-//        Long street_flat_number1 = street_flat_number;
 
-        //System.out.println(firstname + lastname + country + voivodeship);
+        Adress a = new Adress(adress_type, country, voivodeship, city, street_name, street_number, street_flat_number);
 
-       //String value1 = request.getParameter("value1");
-        
+        System.out.println("Zapisuję!" + " " + a.toString());
+
+        ar.save(a);
+
+        System.out.println("Zapisałem!" + " " + a.toString());
+
         return "addAdress";
     }
 

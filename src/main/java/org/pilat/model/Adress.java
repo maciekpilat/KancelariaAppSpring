@@ -39,6 +39,7 @@ public class Adress {
     }
 
     public Adress(Long adress_type, Long country, Long voivodeship, Long city, String street_name, Long street_number, Long street_flat_number) {
+        //this.adress_id = adress_id;
         this.adress_type = adress_type;
         this.country = country;
         this.voivodeship = voivodeship;

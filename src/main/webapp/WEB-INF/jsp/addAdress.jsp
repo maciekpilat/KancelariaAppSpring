@@ -14,23 +14,24 @@
     </head>
     <body>
         <h1>Dodaj Adres</h1>
-        <form action="/action_page.php">
+        <!--pametaj o tym co nizej-->
+        <form action="addadress" method="post" > 
 
             <p>Dane adres</p>
             Typ adresu:<br>
-            <input type="text" name="adress_type"><br>
+            <input type="number" name="adress_type"><br>
             Kraj:<br>
-            <input type="text" name="country"><br>
+            <input type="number" name="country"><br>
             Województwo:<br>
-            <input type="text" name="voivodeship"><br>
+            <input type="number" name="voivodeship"><br>
             Miasto:<br>
-            <input type="text" name="city"><br>
+            <input type="number" name="city"><br>
             Ulica:<br>
             <input type="text" name="street_name"><br>
             Numer ulicy:<br>
-            <input type="text" name="street_number"><br>
+            <input type="number" name="street_number"><br>
             Numer mieszkania:<br>
-            <input type="text" name="street_flat_number"><br>
+            <input type="number" name="street_flat_number"><br>
             <input type="submit" value="Submit">
         </form>        
     </body>

@@ -10,24 +10,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Dodaj Klienta</title>
+        <title>Dodaj wydarzenie</title>
     </head>
     <body>
-        <h1>Dodaj Klienta111</h1>
-        <form action="addclient" method="post">
-
-            <p>Dane Klienta</p>
-            Imię:<br>
-            <input type="text" name="firstname"><br>
-            Nzwisko:<br>
-            <input type="text" name="lastname"><br>
+        <h1>Dodaj wydarzenie</h1>
+        <form action="addcase" method="post">
+            
+            Typ wydarzenia:<br>
+            <input type="text" name="event"><br>
+            
             <input type="submit">
         </form>
 
     </form>       
 </body>
 </html>
-
-
-<!--private Long adress_id;
-private Long adress_type; // adres klienta, sadu, miejsca spotkania itp.-->

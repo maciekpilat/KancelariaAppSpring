@@ -6,7 +6,9 @@
 package org.pilat.controller;
 
 import org.pilat.repository.CaseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
@@ -14,5 +16,14 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class CaseController {
+
+    @Autowired
     private CaseRepository cr;
+
+    @RequestMapping("/addcase")
+    public String caseController() {
+
+        return "addCase";
+    }
+
 }

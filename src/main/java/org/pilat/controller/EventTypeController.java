@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EventTypeController {
 
     @RequestMapping("/addeventtype")
-    public String addEvent() {
+    public String addEventType() {
 
         System.out.println("ODPALAM EventTypeController!");
 
