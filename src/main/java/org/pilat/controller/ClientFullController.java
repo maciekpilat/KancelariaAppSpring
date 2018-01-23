@@ -30,13 +30,13 @@ public class ClientFullController {
     public String ClientFullForm(Model model,
             @RequestParam("clientFirstName") String clientFirstName,
             @RequestParam("clientLastName") String clientLastName,
-            @RequestParam("adress_type") Long adress_type,
+            @RequestParam("adress_type") Long adressType,
             @RequestParam("country") Long country,
             @RequestParam("voivodeship") Long voivodeship,
             @RequestParam("city") Long city,
-            @RequestParam("street_name") String street_name,
-            @RequestParam("street_number") Long street_number,
-            @RequestParam("street_flat_number") Long street_flat_number
+            @RequestParam("street_name") String streetName,
+            @RequestParam("street_number") Long streetNumber,
+            @RequestParam("street_flat_number") Long streetFlatNumber
             ){
         
         

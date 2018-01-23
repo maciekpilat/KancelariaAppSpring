@@ -34,9 +34,9 @@ public class EventTypeController {
 
     @PostMapping("/addeventtype")
     public String eventTypeForm(Model modle,
-            @RequestParam("event_type_name") String event_type_name
+            @RequestParam("event_type_name") String eventTypeName
     ) {
-        EventType e = new EventType(event_type_name);
+        EventType e = new EventType(eventTypeName);
 
         System.out.println("Zapisuję rodzaj wydarzenie: " + e.toString());
 

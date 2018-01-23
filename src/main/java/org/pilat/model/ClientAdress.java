@@ -22,32 +22,32 @@ public class ClientAdress {
 
     @Id
     @GeneratedValue
-    private Long adress_id;
-    private Long adress_type; // adres klienta, sadu, miejsca spotkania itp.
+    private Long adressId;
+    private Long adressType; // adres klienta, sadu, miejsca spotkania itp.
     private Long country;
     private Long voivodeship;
     private Long city;
-    private String street_name;
-    private Long street_number;
-    private Long street_flat_number;
+    private String streetName;
+    private Long streetNumber;
+    private Long streetFlatNumber;
 
-    public ClientAdress(String clientFirstName, String clientLastName, Long adress_type, Long country, Long voivodeship, Long city, String street_name, Long street_number, Long street_flat_number) {
+    public ClientAdress(String clientFirstName, String clientLastName, Long adressType, Long country, Long voivodeship, Long city, String streetName, Long streetNumber, Long streetFlatNumber) {
         this.clientFirstName = clientFirstName;
         this.clientLastName = clientLastName;
-        this.adress_type = adress_type;
+        this.adressType = adressType;
         this.country = country;
         this.voivodeship = voivodeship;
         this.city = city;
-        this.street_name = street_name;
-        this.street_number = street_number;
-        this.street_flat_number = street_flat_number;
+        this.streetName = streetName;
+        this.streetNumber = streetNumber;
+        this.streetFlatNumber = streetFlatNumber;
     }
 
     @Override
     public String toString() {
-        return "ClientAdress{" + "clientId=" + clientId + ", clientFirstName=" + clientFirstName + ", clientLastName=" + clientLastName + ", adress_id=" + adress_id + ", adress_type=" + adress_type + ", country=" + country + ", voivodeship=" + voivodeship + ", city=" + city + ", street_name=" + street_name + ", street_number=" + street_number + ", street_flat_number=" + street_flat_number + '}';
+        return "ClientAdress{" + "clientId=" + getClientId() + ", clientFirstName=" + getClientFirstName() + ", clientLastName=" + getClientLastName() + ", adress_id=" + getAdressId() + ", adress_type=" + getAdressType() + ", country=" + getCountry() + ", voivodeship=" + getVoivodeship() + ", city=" + getCity() + ", streetName=" + getStreetName() + ", streetNumber=" + getStreetNumber() + ", street_flat_number=" + getStreetFlatNumber() + '}';
     }
-    
+
     /**
      * @return the clientId
      */
@@ -91,31 +91,31 @@ public class ClientAdress {
     }
 
     /**
-     * @return the adress_id
+     * @return the adressId
      */
-    public Long getAdress_id() {
-        return adress_id;
+    public Long getAdressId() {
+        return adressId;
     }
 
     /**
-     * @param adress_id the adress_id to set
+     * @param adressId the adressId to set
      */
-    public void setAdress_id(Long adress_id) {
-        this.adress_id = adress_id;
+    public void setAdressId(Long adressId) {
+        this.adressId = adressId;
     }
 
     /**
-     * @return the adress_type
+     * @return the adressType
      */
-    public Long getAdress_type() {
-        return adress_type;
+    public Long getAdressType() {
+        return adressType;
     }
 
     /**
-     * @param adress_type the adress_type to set
+     * @param adressType the adressType to set
      */
-    public void setAdress_type(Long adress_type) {
-        this.adress_type = adress_type;
+    public void setAdressType(Long adressType) {
+        this.adressType = adressType;
     }
 
     /**
@@ -161,45 +161,47 @@ public class ClientAdress {
     }
 
     /**
-     * @return the street_name
+     * @return the streetName
      */
-    public String getStreet_name() {
-        return street_name;
+    public String getStreetName() {
+        return streetName;
     }
 
     /**
-     * @param street_name the street_name to set
+     * @param streetName the streetName to set
      */
-    public void setStreet_name(String street_name) {
-        this.street_name = street_name;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 
     /**
-     * @return the street_number
+     * @return the streetNumber
      */
-    public Long getStreet_number() {
-        return street_number;
+    public Long getStreetNumber() {
+        return streetNumber;
     }
 
     /**
-     * @param street_number the street_number to set
+     * @param streetNumber the streetNumber to set
      */
-    public void setStreet_number(Long street_number) {
-        this.street_number = street_number;
+    public void setStreetNumber(Long streetNumber) {
+        this.streetNumber = streetNumber;
     }
 
     /**
-     * @return the street_flat_number
+     * @return the streetFlatNumber
      */
-    public Long getStreet_flat_number() {
-        return street_flat_number;
+    public Long getStreetFlatNumber() {
+        return streetFlatNumber;
     }
 
     /**
-     * @param street_flat_number the street_flat_number to set
+     * @param streetFlatNumber the streetFlatNumber to set
      */
-    public void setStreet_flat_number(Long street_flat_number) {
-        this.street_flat_number = street_flat_number;
+    public void setStreetFlatNumber(Long streetFlatNumber) {
+        this.streetFlatNumber = streetFlatNumber;
     }
+    
+  
 
 }

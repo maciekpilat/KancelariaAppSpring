@@ -21,10 +21,10 @@ public class Event {
 
     @Id
     @GeneratedValue
-    private Long event_id;
-    private Long event_type;
+    private Long eventId;
+    private Long eventType;
     @ManyToOne
-    private EventType eventType;
+    private EventType eventTypeT;
     @ManyToOne
     private Party party;
 
@@ -32,50 +32,50 @@ public class Event {
     public Event() {
     }
 
-    public Event(Long event_type) {
-        this.event_type = event_type;
+    public Event(Long eventType) {
+        this.eventType = eventType;
     }
 
     /**
-     * @return the event_id
+     * @return the eventId
      */
-    public Long getEvent_id() {
-        return event_id;
+    public Long getEventId() {
+        return eventId;
     }
 
     /**
-     * @param event_id the event_id to set
+     * @param eventId the eventId to set
      */
-    public void setEvent_id(Long event_id) {
-        this.event_id = event_id;
-    }
-
-    /**
-     * @return the event_type
-     */
-    public Long getEvent_type() {
-        return event_type;
-    }
-
-    /**
-     * @param event_type the event_type to set
-     */
-    public void setEvent_type(Long event_type) {
-        this.event_type = event_type;
+    public void setEventId(Long eventId) {
+        this.eventId = eventId;
     }
 
     /**
      * @return the eventType
      */
-    public EventType getEventType() {
+    public Long getEventType() {
         return eventType;
     }
 
     /**
      * @param eventType the eventType to set
      */
-    public void setEventType(EventType eventType) {
+    public void setEventType(Long eventType) {
         this.eventType = eventType;
+    }
+
+    /**
+     * @return the eventTypeT
+     */
+    public EventType getEventTypeT() {
+        return eventTypeT;
+    }
+
+    /**
+     * @param eventTypeT the eventTypeT to set
+     */
+    public void setEventTypeT(EventType eventTypeT) {
+        this.eventTypeT = eventTypeT;
     }
 
     /**
@@ -91,6 +91,10 @@ public class Event {
     public void setParty(Party party) {
         this.party = party;
     }
+
+    
+
+   
 
    
 }

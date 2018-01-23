@@ -20,43 +20,45 @@ public class EventType {
 
     @Id
     @GeneratedValue
-    private Long event_type_id;
-    private String event_type_name;
+    private Long eventTypeId;
+    private String eventTypeName;
 
     // konstruktor bezargumentowy dla JPA
     public EventType() {
     }
 
-    public EventType(String event_type_name) {
-        this.event_type_name = event_type_name;
+    public EventType(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
     }
 
     /**
-     * @return the event_type_id
+     * @return the eventTypeId
      */
-    public Long getEvent_type_id() {
-        return event_type_id;
+    public Long getEventTypeId() {
+        return eventTypeId;
     }
 
     /**
-     * @param event_type_id the event_type_id to set
+     * @param eventTypeId the eventTypeId to set
      */
-    public void setEvent_type_id(Long event_type_id) {
-        this.event_type_id = event_type_id;
+    public void setEventTypeId(Long eventTypeId) {
+        this.eventTypeId = eventTypeId;
     }
 
     /**
-     * @return the event_type_name
+     * @return the eventTypeName
      */
-    public String getEvent_type_name() {
-        return event_type_name;
+    public String getEventTypeName() {
+        return eventTypeName;
     }
 
     /**
-     * @param event_type_name the event_type_name to set
+     * @param eventTypeName the eventTypeName to set
      */
-    public void setEvent_type_name(String event_type_name) {
-        this.event_type_name = event_type_name;
+    public void setEventTypeName(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
     }
+
+
 
 }

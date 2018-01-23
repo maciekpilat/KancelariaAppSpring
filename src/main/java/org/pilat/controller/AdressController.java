@@ -34,16 +34,16 @@ public class AdressController {
 
     @PostMapping("/addadress")
     public String addAdressForm(Model model,
-            @RequestParam("adress_type") Long adress_type,
+            @RequestParam("adress_type") Long adressType,
             @RequestParam("country") Long country,
             @RequestParam("voivodeship") Long voivodeship,
             @RequestParam("city") Long city,
-            @RequestParam("street_name") String street_name,
-            @RequestParam("street_number") Long street_number,
-            @RequestParam("street_flat_number") Long street_flat_number
+            @RequestParam("street_name") String streetName,
+            @RequestParam("street_number") Long streetNumber,
+            @RequestParam("street_flat_number") Long streetFlatNumber
     ) {
 
-        Adress a = new Adress(adress_type, country, voivodeship, city, street_name, street_number, street_flat_number);
+        Adress a = new Adress(adressType, country, voivodeship, city, streetName, streetNumber, streetFlatNumber);
 
         System.out.println("Zapisuję!" + " " + a.toString());
 

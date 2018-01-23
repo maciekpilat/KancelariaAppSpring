@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.pilat.model.Adress;
 import org.pilat.repository.AdressRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -16,6 +17,7 @@ import org.pilat.repository.AdressRepository;
  */
 public class AdressServiceImplementation implements AdressService {
 
+    @Autowired
     AdressRepository ar;
 
     // sprawdzić!!!
