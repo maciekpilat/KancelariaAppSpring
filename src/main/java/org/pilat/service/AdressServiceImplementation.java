@@ -19,7 +19,6 @@ public class AdressServiceImplementation implements AdressService {
     AdressRepository ar;
 
     // sprawdzić!!!
-    
     @Override
     public void saveAdress(Adress adress) {
         System.out.println("Zapisuję adres: " + adress.toString());
@@ -63,6 +62,7 @@ public class AdressServiceImplementation implements AdressService {
         for (Adress a : adressList) {
             System.out.println("Adres: " + a.toString());
         }
+//List<Adress> adressList = (List<Adress>) ar.findAll();
 
         return adressList;
 
