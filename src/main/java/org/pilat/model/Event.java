@@ -8,6 +8,7 @@ package org.pilat.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +23,10 @@ public class Event {
     @GeneratedValue
     private Long event_id;
     private Long event_type;
+    @ManyToOne
+    private EventType eventType;
+    @ManyToOne
+    private Party party;
 
     // konstruktor bezargumentowy dla JPA
     public Event() {
@@ -59,4 +64,33 @@ public class Event {
         this.event_type = event_type;
     }
 
+    /**
+     * @return the eventType
+     */
+    public EventType getEventType() {
+        return eventType;
+    }
+
+    /**
+     * @param eventType the eventType to set
+     */
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
+    }
+
+    /**
+     * @return the party
+     */
+    public Party getParty() {
+        return party;
+    }
+
+    /**
+     * @param party the party to set
+     */
+    public void setParty(Party party) {
+        this.party = party;
+    }
+
+   
 }

@@ -5,20 +5,20 @@
  */
 package org.pilat.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /**
  *
  * @author Pilat
  */
-@Entity
-@Table(name = "adress")
-public class Adress {
+public class ClientAdress {
+
+    @Id
+    @GeneratedValue
+    private Long clientId;
+    private String clientFirstName;
+    private String clientLastName;
 
     @Id
     @GeneratedValue
@@ -30,20 +30,10 @@ public class Adress {
     private String street_name;
     private Long street_number;
     private Long street_flat_number;
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    private Client client;
 
-    @Override
-    public String toString() {
-        return "Adress{" + "adress_id=" + adress_id + ", adress_type=" + adress_type + ", country=" + country + ", voivodeship=" + voivodeship + ", city=" + city + ", street_name=" + street_name + ", street_number=" + street_number + ", street_flat_number=" + street_flat_number + '}';
-    }
-
-    // konstruktor bezargumentowy dla JPA
-    public Adress() {
-    }
-
-    public Adress(Long adress_type, Long country, Long voivodeship, Long city, String street_name, Long street_number, Long street_flat_number) {
-        //this.adress_id = adress_id;
+    public ClientAdress(String clientFirstName, String clientLastName, Long adress_type, Long country, Long voivodeship, Long city, String street_name, Long street_number, Long street_flat_number) {
+        this.clientFirstName = clientFirstName;
+        this.clientLastName = clientLastName;
         this.adress_type = adress_type;
         this.country = country;
         this.voivodeship = voivodeship;
@@ -51,6 +41,53 @@ public class Adress {
         this.street_name = street_name;
         this.street_number = street_number;
         this.street_flat_number = street_flat_number;
+    }
+
+    @Override
+    public String toString() {
+        return "ClientAdress{" + "clientId=" + clientId + ", clientFirstName=" + clientFirstName + ", clientLastName=" + clientLastName + ", adress_id=" + adress_id + ", adress_type=" + adress_type + ", country=" + country + ", voivodeship=" + voivodeship + ", city=" + city + ", street_name=" + street_name + ", street_number=" + street_number + ", street_flat_number=" + street_flat_number + '}';
+    }
+    
+    /**
+     * @return the clientId
+     */
+    public Long getClientId() {
+        return clientId;
+    }
+
+    /**
+     * @param clientId the clientId to set
+     */
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
+    /**
+     * @return the clientFirstName
+     */
+    public String getClientFirstName() {
+        return clientFirstName;
+    }
+
+    /**
+     * @param clientFirstName the clientFirstName to set
+     */
+    public void setClientFirstName(String clientFirstName) {
+        this.clientFirstName = clientFirstName;
+    }
+
+    /**
+     * @return the clientLastName
+     */
+    public String getClientLastName() {
+        return clientLastName;
+    }
+
+    /**
+     * @param clientLastName the clientLastName to set
+     */
+    public void setClientLastName(String clientLastName) {
+        this.clientLastName = clientLastName;
     }
 
     /**

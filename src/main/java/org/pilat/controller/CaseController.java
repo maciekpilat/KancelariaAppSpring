@@ -37,7 +37,7 @@ public class CaseController {
             @RequestParam("dateEndDate") String dateEndDate,
             @RequestParam("clientId") Long clientId
     ) {
-        Case c = new Case(caseTitle, caseStartDate, dateEndDate, clientId);
+        Case c = new Case(caseTitle, caseStartDate, dateEndDate);
 
         System.out.println("Zapisuję sprawę: " + c.toString());
         

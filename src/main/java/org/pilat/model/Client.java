@@ -5,10 +5,14 @@
  */
 package org.pilat.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import org.pilat.model.Case;
 
 /**
  *
@@ -23,6 +27,10 @@ public class Client {
     private Long clientId;
     private String clientFirstName;
     private String clientLastName;
+    
+    @ManyToMany
+    private Collection<Case> casex = new ArrayList<Case>();
+    
 
     @Override
     public String toString() {
