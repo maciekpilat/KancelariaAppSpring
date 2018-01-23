@@ -10,11 +10,13 @@ import java.util.List;
 import org.pilat.model.Adress;
 import org.pilat.repository.AdressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Pilat
  */
+@Service
 public class AdressServiceImplementation implements AdressService {
 
     @Autowired
@@ -25,7 +27,6 @@ public class AdressServiceImplementation implements AdressService {
     public void saveAdress(Adress adress) {
         System.out.println("Zapisuję adres: " + adress.toString());
         ar.save(adress);
-        System.out.println("Zapisałem adres!");
     }
 
     @Override

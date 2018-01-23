@@ -7,11 +7,13 @@ package org.pilat.service;
 
 import java.util.List;
 import org.pilat.model.Client;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Pilat
  */
+@Service
 public class ClientServiceImplementation implements ClientService{
 
     @Override
