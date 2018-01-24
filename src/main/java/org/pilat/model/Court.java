@@ -5,10 +5,12 @@
  */
 package org.pilat.model;
 
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -22,7 +24,11 @@ public class Court {
     @GeneratedValue
     private Long courtId;
     private String courtName;
+    
     @ManyToOne
     private CourtType courtType;
+    
+    @OneToMany
+    Collection<CourtDepartment> courtDepartmentList;
     
 }

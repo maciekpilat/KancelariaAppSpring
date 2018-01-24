@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -29,6 +30,6 @@ public class Party {
     private String partyTitle;
     private Long partyClient; //0/1 - czy jest klientem czy nie
     
-    @ManyToMany
-    private Collection<Case> casex = new ArrayList<Case>();
+    @ManyToOne
+    private Case casex;
 }

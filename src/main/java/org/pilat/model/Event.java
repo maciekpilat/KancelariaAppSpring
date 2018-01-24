@@ -23,8 +23,10 @@ public class Event {
     @GeneratedValue
     private Long eventId;
     private Long eventType;
+    
     @ManyToOne
     private EventType eventTypeT;
+    
     @ManyToOne
     private Party party;
 

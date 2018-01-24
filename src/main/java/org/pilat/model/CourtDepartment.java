@@ -8,6 +8,7 @@ package org.pilat.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -21,4 +22,7 @@ public class CourtDepartment {
     @GeneratedValue
     private Long courtDepartmentId;
     private String courtDepartmentName;
+    
+    @ManyToOne
+    Court court;
 }

@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.pilat.model.Client;
 
@@ -30,15 +31,13 @@ public class Case {
     private String caseTitle;
     private String caseStartDate;
     private String caseEndDate;
-    
+
     @ManyToMany(fetch = FetchType.LAZY)
     private Collection<Client> client = new ArrayList<Client>();
+    
+    @OneToMany
+    private Collection<Party> partyList;
 
-    
-    
-    
-    
-    
     public Case(String caseTitle, String caseStartDate, String caseEndDate) {
         this.caseTitle = caseTitle;
         this.caseStartDate = caseStartDate;
@@ -120,7 +119,4 @@ public class Case {
         this.client = client;
     }
 
-
-
- 
 }

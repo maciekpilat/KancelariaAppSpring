@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.pilat.model.Case;
 
@@ -33,6 +34,8 @@ public class Client {
     @ManyToMany(fetch = FetchType.LAZY)
     private Collection<Case> casex = new ArrayList<Case>();
     
+    @OneToMany
+    private Collection<Adress> adressList = new ArrayList<Adress>();
 
     @Override
     public String toString() {
