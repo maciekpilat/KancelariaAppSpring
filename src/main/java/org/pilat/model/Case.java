@@ -7,7 +7,9 @@ package org.pilat.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -29,7 +31,7 @@ public class Case {
     private String caseStartDate;
     private String caseEndDate;
     
-    @ManyToMany(mappedBy = "case")
+    @ManyToMany(fetch = FetchType.LAZY)
     private Collection<Client> client = new ArrayList<Client>();
 
     

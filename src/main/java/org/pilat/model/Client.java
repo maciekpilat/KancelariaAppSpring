@@ -7,7 +7,9 @@ package org.pilat.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -19,7 +21,7 @@ import org.pilat.model.Case;
  * @author Pilat
  */
 @Entity
-@Table(name = "tab_clenta")
+@Table(name = "tab_client")
 public class Client {
 
     @Id
@@ -28,7 +30,7 @@ public class Client {
     private String clientFirstName;
     private String clientLastName;
     
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     private Collection<Case> casex = new ArrayList<Case>();
     
 
