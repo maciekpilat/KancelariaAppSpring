@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.pilat.ModelEvent;
+package org.pilat.modeleventenum;
 
 import java.util.Date;
 import org.pilat.model.Party;
